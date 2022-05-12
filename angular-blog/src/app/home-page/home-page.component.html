@@ -1,0 +1,13 @@
+<div
+  class="posts"
+  *ngIf="posts$ | async as posts; else loading"
+>
+  <app-post
+    *ngFor="let post of posts.reverse()"
+    [post]="post"
+  ></app-post>
+</div>
+
+<ng-template #loading>
+  <h2 class="text-center">Loading posts...</h2>
+</ng-template>

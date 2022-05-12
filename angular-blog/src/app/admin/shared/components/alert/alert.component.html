@@ -1,0 +1,9 @@
+<div [@slideInAlert] class="alert-wrap" *ngIf="visible">
+  <div class="alert" [ngClass]="{
+    'alert-success': type === 'success',
+    'alert-warning': type === 'warning',
+    'alert-danger': type === 'danger'
+  }">
+    <p>{{ text }}</p>
+  </div>
+</div>

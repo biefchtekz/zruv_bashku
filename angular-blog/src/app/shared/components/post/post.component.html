@@ -1,0 +1,9 @@
+<div class="card post" [routerLink]="['/post', post.id]">
+  <div class="card-header">
+    <h2>{{post.title | titlecase}}</h2>
+    <small>{{post.date | date: 'dd.MM.yyyy | HH:mm'}}</small>
+  </div>
+  <div>
+    <small>{{post.author}}</small>
+  </div>
+</div>

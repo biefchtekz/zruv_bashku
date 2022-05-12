@@ -1,0 +1,35 @@
+<div *ngIf="posts.length; else loading">
+  <div class="form-control">
+    <input type="text" placeholder="Find post" [(ngModel)]="searchStr">
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let post of posts | searchPosts:searchStr; let idx = index">
+      <td>{{ idx+1 }}</td>
+      <td><strong>{{ post.title }}</strong></td>
+      <td>{{ post.author }}</td>
+      <td>{{ post.date | date:'dd.MM.yyyy | HH:mm':undefined:'uk' }}</td>
+      <td>
+        <button
+          class="btn btn-link"
+          [routerLink]="['/admin','post', post.id, 'edit']"
+        >Open</button>
+        <a (click)="remove(post.id)">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #loading>
+  <h2 class="text-center">Loading...</h2>
+</ng-template>

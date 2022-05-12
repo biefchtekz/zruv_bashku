@@ -1,0 +1,21 @@
+textarea{
+  font-family: Roboto;
+}
+.post{
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1{
+    margin-bottom: .5rem;
+  }
+  .info{
+    strong{
+      margin-right: .5rem;
+    }
+    small{
+      margin-left: .5rem;
+    }
+  }
+}
