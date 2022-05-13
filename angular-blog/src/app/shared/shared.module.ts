@@ -4,6 +4,7 @@ import {QuillModule} from "ngx-quill";
 import {CommonModule} from "@angular/common";
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
+import { CommentsComponent } from './components/comments/comments.component';
 
 @NgModule({
   imports: [
@@ -13,11 +14,14 @@ import {RouterModule} from "@angular/router";
     ReactiveFormsModule,
     RouterModule
   ],
-  exports: [
-    HttpClientModule,
-    QuillModule,
-  ],
-  declarations: []
+    exports: [
+        HttpClientModule,
+        QuillModule,
+        CommentsComponent,
+    ],
+  declarations: [
+    CommentsComponent
+  ]
 })
 
 export class SharedModule {}

@@ -14,6 +14,7 @@ import {registerLocaleData} from "@angular/common";
 import UAlocale from "@angular/common/locales/uk";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CommentsComponent} from "./shared/components/comments/comments.component";
 
 registerLocaleData(UAlocale, 'uk')
 
@@ -29,7 +30,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     MainLayoutComponent,
     HomePageComponent,
     PostPageComponent,
-    PostComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

@@ -62,7 +62,7 @@ export class PostsService {
     return this.http.delete<void>(`${environment.fbDbUrl}/posts/${id}.json`)
   }
 
-  removeComment(commentId: string, postId: string): Observable<void> {
+  removeComment(commentId: string, postId: string | undefined): Observable<void> {
     return this.http.delete<void>(`${environment.fbDbUrl}/posts/${postId}/comments/${commentId}.json`)
   }
 

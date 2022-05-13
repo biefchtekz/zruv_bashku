@@ -13,52 +13,9 @@
       <quill-view-html [content]="post.text"></quill-view-html>
     </div>
   </div>
-
-
-
-<div *ngIf="comments$ | async as comments; else noComments">
-  <h2>Comments</h2>
-  <div class="card" *ngFor="let comment of comments">
-    <small><b>Тут має бути ім'я коментатора</b> | Тут дата</small>
-    <p>А тут блін текст коментаря:  {{comment | json}}</p>
-  </div>
-</div>
-<hr>
-<form (ngSubmit)="submitComment()" [formGroup]="form">
-  <h2><small>Leave your comment here</small></h2>
-  <div
-    class="form-control"
-    [ngClass]="{invalid: form.get('commentAuthor')?.touched && form.get('commentAuthor')?.invalid}"
-  >
-    <label for="commentAuthor">Your name</label>
-    <input id="commentAuthor" type="text" formControlName="commentAuthor">
-    <div
-      class="validation"
-      *ngIf="form.get('commentAuthor')?.touched && form.get('commentAuthor')?.invalid"
-    >
-      <small *ngIf="form.get('commentAuthor')?.errors?.['required']">Name field cannot be empty</small>
-    </div>
-  </div>
-  <div
-    class="form-control"
-    [ngClass]="{invalid: form.get('commentText')?.touched && form.get('commentText')?.invalid}"
-  >
-    <label for="commentText">Your comment</label>
-    <input id="commentText" type="text" formControlName="commentText">
-    <div
-      class="validation"
-      *ngIf="form.get('commentText')?.touched && form.get('commentText')?.invalid"
-    >
-      <small *ngIf="form.get('commentText')?.errors?.['required']">Comment cannot be empty</small>
-    </div>
-  </div>
-  <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Submit comment</button>
-</form>
+  <app-comments [post]="post"></app-comments>
 </div>
 
-<ng-template #noComments>
-  <h2> No comments yet...</h2>
-</ng-template>
 
 <ng-template #loading>
   <h2 class="text-center"> Loading post...</h2>
